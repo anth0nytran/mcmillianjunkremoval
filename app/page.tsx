@@ -758,73 +758,127 @@ export default function McMillianJunkRemovalPage() {
       {/* Quick Info / At a Glance — compact SEO-rich info strip */}
       <section className="py-12 border-t border-b" style={{ backgroundColor: t.surfaceBg, borderColor: t.border }}>
         <div className={shellClass}>
-          {/* Quick stats bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {/* Premium Quick Stats */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-14">
             {[
-              { label: 'Availability', value: '24/7', sub: 'Mon\u2013Sun' },
-              { label: 'Estimates', value: 'Free', sub: 'No obligation' },
-              { label: 'Google Rating', value: <span className="flex items-center justify-center gap-1.5">{ratingText} <Star className="h-5 w-5 mb-0.5 fill-yellow-400 text-yellow-400" /></span>, sub: `${reviewCount}+ reviews` },
-              { label: 'Pricing', value: 'Fair', sub: 'No hidden fees' },
+              { label: 'Always Available', value: '24/7', sub: 'Call us anytime', icon: <Clock className="h-6 w-6" style={{ color: accent }} /> },
+              { label: 'Free Estimates', value: '$0', sub: 'No hidden fees', icon: <ClipboardList className="h-6 w-6" style={{ color: accent }} /> },
+              { label: 'Top Rated', value: ratingText, sub: `${reviewCount}+ 5-star reviews`, icon: <Star className="h-6 w-6" style={{ color: accent }} fill={accent} /> },
+              { label: 'Fair Pricing', value: '100%', sub: 'Guaranteed satisfaction', icon: <Award className="h-6 w-6" style={{ color: accent }} /> },
             ].map((stat, i) => (
-              <div key={i} className="text-center p-5 rounded-sm relative overflow-hidden" style={{ backgroundColor: '#111111' }}>
-                <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ backgroundColor: action }} />
-                <div className="text-xl font-black uppercase" style={{ color: action }}>{stat.value}</div>
-                <div className="text-[11px] font-bold uppercase tracking-widest mt-1 text-white">{stat.label}</div>
-                <div className="text-[10px] font-medium mt-0.5 text-neutral-500">{stat.sub}</div>
+              <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full mb-4" style={{ backgroundColor: `${action}15` }}>
+                  {stat.icon}
+                </div>
+                <div className="text-3xl font-black tracking-tight leading-none mb-1.5" style={{ color: t.textPrimary }}>
+                  {stat.value}
+                </div>
+                <div className="text-xs font-black uppercase tracking-widest mb-1.5" style={{ color: t.textPrimary }}>
+                  {stat.label}
+                </div>
+                <div className="text-sm font-medium" style={{ color: t.textSecondary }}>
+                  {stat.sub}
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Info row — services + areas + CTA */}
-          <div className="flex flex-col lg:flex-row lg:items-start gap-10">
-            {/* Left — SEO-rich description and tags */}
-            <div className="flex-1 min-w-0">
-              <h2 className="text-xl md:text-2xl font-black tracking-tight uppercase mb-4" style={{ color: t.textPrimary }}>
-                Junk Removal & Demolition Services — Houston, TX
-              </h2>
-              <p className="text-sm md:text-base leading-relaxed mb-8" style={{ color: t.textSecondary }}>
-                McMillian Junk Removal provides affordable junk removal, demolition, hoarder house cleanouts, appliance removal, and construction cleanup for residential and commercial clients across Houston, Harris County, Sugar Land, Cypress, Fort Bend, and Galveston County. Same-day service. No hidden fees.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-8 lg:gap-12">
-                {/* Areas Column */}
-                <div>
-                  <h3 className="text-xs font-black uppercase tracking-widest mb-3 border-b pb-2" style={{ color: t.textPrimary, borderColor: t.border }}>
-                    Areas Served
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {serviceAreaCities.map(city => (
-                      <span key={city} className="px-2.5 py-1.5 rounded-sm text-[11px] font-bold uppercase tracking-wider border shadow-sm" style={{ borderColor: t.border, color: t.textSecondary, backgroundColor: '#fff' }}>
-                        {city}
-                      </span>
-                    ))}
-                  </div>
+          {/* High-End Accepted Payments Trust Badge */}
+          <div className="mb-12 w-full px-6 py-5 rounded-sm border border-neutral-200 bg-white shadow-sm flex flex-col md:flex-row items-center justify-between gap-6" style={{ borderTop: `4px solid ${action}` }}>
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="h-6 w-6 text-emerald-600" />
+              <div>
+                <div className="text-sm font-black uppercase tracking-widest text-neutral-900 leading-none mb-1">
+                  100% Secure Payments
                 </div>
-
-                {/* Services Column */}
-                <div>
-                  <h3 className="text-xs font-black uppercase tracking-widest mb-3 border-b pb-2" style={{ color: t.textPrimary, borderColor: t.border }}>
-                    Our Services
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {['Junk Removal', ...services].map(svc => (
-                      <span key={svc} className="px-2.5 py-1.5 rounded-sm text-[11px] font-bold uppercase tracking-wider text-white shadow-sm" style={{ backgroundColor: accent }}>
-                        {svc}
-                      </span>
-                    ))}
-                  </div>
+                <div className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
+                  Flexible options accepted
                 </div>
               </div>
             </div>
 
-            {/* Right — CTA */}
-            <div className="shrink-0 flex flex-col items-start lg:items-end gap-3 lg:pt-2 w-full lg:w-auto bg-white/50 p-6 rounded-md border" style={{ borderColor: t.border }}>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: t.textPrimary }}>Need Service Now?</span>
-              <a href={`tel:${cleanPhone}`} className="w-full lg:w-auto inline-flex justify-center items-center gap-2 px-6 py-4 rounded-sm text-base font-black text-white uppercase tracking-wide transition-all shadow-md hover:scale-[1.02]" style={{ backgroundColor: accent }}>
-                <Phone className="h-5 w-5" />
-                {config.phone}
-              </a>
-              <span className="text-xs font-medium w-full text-center lg:text-right" style={{ color: t.textSecondary }}>Free estimates — Call or text anytime</span>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+              {[
+                { name: 'Credit Card', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> },
+                { name: 'Zelle', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path><line x1="12" y1="7" x2="12" y2="17"></line><polyline points="9 10 12 7 15 10"></polyline></svg> },
+                { name: 'Cash App', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> },
+                { name: 'Venmo', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> },
+                { name: 'Cash', icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg> }
+              ].map(method => (
+                <div key={method.name} className="flex items-center gap-2 font-bold text-[13px] text-neutral-800 uppercase tracking-widest">
+                  <span className="text-neutral-400">{method.icon}</span>
+                  {method.name}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* New Info Row - Clean Typography & Bullet Points */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-start w-full">
+            {/* Left — SEO-rich description and lists */}
+            <div className="flex-1 w-full">
+              <h2 className="text-2xl md:text-3xl font-black tracking-tight uppercase mb-5" style={{ color: t.textPrimary }}>
+                Houston's Trusted Junk Removal
+              </h2>
+              <p className="text-base leading-relaxed mb-10 max-w-2xl" style={{ color: t.textSecondary }}>
+                McMillian Junk Removal is your local, top-rated team for affordable junk removal, demolition, and comprehensive cleanouts. From single appliance pickups to full property hoarder cleanouts, our professional crews handle the heavy lifting safely and responsibly with clear, transparent pricing and no hidden fees.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+                {/* Services Column */}
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-widest mb-4 flex items-center gap-2 pb-3 border-b" style={{ color: t.textPrimary, borderColor: t.border }}>
+                    <Hammer className="h-4 w-4" style={{ color: accent }} /> Core Services
+                  </h3>
+                  <ul className="space-y-3.5">
+                    {['Junk Removal', ...services].map(svc => (
+                      <li key={svc} className="flex items-center gap-3 text-sm font-bold text-neutral-700">
+                        <ArrowRight className="h-3.5 w-3.5 shrink-0" style={{ color: action }} />
+                        {svc}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Areas Column */}
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-widest mb-4 flex items-center gap-2 pb-3 border-b" style={{ color: t.textPrimary, borderColor: t.border }}>
+                    <ShieldCheck className="h-4 w-4" style={{ color: accent }} /> Areas Served
+                  </h3>
+                  <ul className="grid grid-cols-2 gap-y-3.5 gap-x-4">
+                    {serviceAreaCities.map(city => (
+                      <li key={city} className="flex items-center gap-2.5 text-sm font-semibold text-neutral-600">
+                        <div className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: action }} />
+                        {city}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — Impactful CTA Module */}
+            <div className="w-full lg:w-[380px] shrink-0">
+              <div className="rounded-xl overflow-hidden relative shadow-[0_8px_30px_rgb(0,0,0,0.08)] bg-white border" style={{ borderColor: t.border }}>
+                <div className="h-1.5 w-full" style={{ backgroundColor: accent }} />
+                <div className="p-8 pb-6 flex flex-col items-center text-center">
+                  <div className="h-14 w-14 rounded-full flex items-center justify-center mb-5" style={{ backgroundColor: `${action}15` }}>
+                    <Phone className="h-6 w-6" style={{ color: accent }} />
+                  </div>
+                  <h3 className="text-xl font-black uppercase tracking-tight text-neutral-900 mb-3">Need Service Now?</h3>
+                  <p className="text-sm text-neutral-500 font-medium mb-8">Call directly for an instant, free estimate. Same-day service available in most areas.</p>
+
+                  <a href={`tel:${cleanPhone}`} className="w-full relative group overflow-hidden rounded-sm text-white font-black text-lg py-4 px-6 flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] shadow-[2px_2px_0_rgba(0,0,0,0.1)] active:scale-95" style={{ backgroundColor: accent }}>
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                    <Phone className="h-5 w-5 fill-white" />
+                    {config.phone}
+                  </a>
+                </div>
+                <div className="bg-neutral-50 border-t px-6 py-4 flex items-center justify-center gap-2" style={{ borderColor: t.border }}>
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  <span className="text-xs font-bold text-neutral-700 uppercase tracking-wider">{ratingText} Average on Google</span>
+                </div>
+              </div>
             </div>
           </div>
 

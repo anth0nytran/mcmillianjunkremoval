@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Barlow, Barlow_Condensed, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const bodyFont = Barlow({
+const bodyFont = DM_Sans({
   variable: "--font-app-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const displayFont = Barlow_Condensed({
+const displayFont = Montserrat({
   variable: "--font-app-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -24,38 +24,38 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jimeneztreepro.com'),
-  title: "Tree Service in Pasadena & Houston, TX | Jimenez Tree Pro",
-  description: "Tree removal, tree trimming, stump grinding, and storm damage cleanup for homeowners in Pasadena, Houston, Pearland, Friendswood, League City, and Clear Lake. 24/7 emergency service and free estimates.",
+  metadataBase: new URL('https://mcmillianjunkremoval.com'),
+  title: "Affordable Junk Removal & Demolition in Houston, TX | McMillian Junk Removal",
+  description: "Houston's trusted junk removal, demolition, and cleanout service. Same-day pickup. Residential & commercial. Serving Harris County, Sugar Land, Cypress, Fort Bend & Galveston County. Free estimates — call (832) 721-6206.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Professional Tree Service for Houston Area Homeowners | Jimenez Tree Pro",
-    description: "Done right. Done safely. Done today. Emergency tree removal, large tree trimming, stump grinding, and storm cleanup. Call for a free estimate.",
-    url: 'https://jimeneztreepro.com',
-    siteName: 'Jimenez Tree Pro',
+    title: "Affordable Junk Removal & Demolition | McMillian Junk Removal — Houston TX",
+    description: "Fair pricing. Fast service. We haul it all. Junk removal, demolition, hoarder cleanouts, appliance removal & more. Free estimates — call or text anytime.",
+    url: 'https://mcmillianjunkremoval.com',
+    siteName: 'McMillian Junk Removal',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/tree_pro/og-tree.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Jimenez Tree Pro - Professional Tree Service',
+        url: '/mcmillian/mcmill-logo.png',
+        width: 734,
+        height: 1068,
+        alt: 'McMillian Junk Removal — Affordable Junk Hauling in Houston TX',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tree Service in Pasadena & Houston | Jimenez Tree Pro",
-    description: "24/7 emergency tree service. Tree removal, tree trimming, stump grinding, and storm cleanup for Houston area homeowners.",
-    images: ['/tree_pro/og-tree.jpg'],
+    title: "Houston Junk Removal & Demolition | McMillian Junk Removal",
+    description: "24/7 junk removal, demolition, and cleanout services for Houston and surrounding areas. Fair pricing, same-day service, free estimates.",
+    images: ['/mcmillian/mcmill-logo.png'],
   },
   icons: {
-    icon: '/tree_pro/tree_logo.svg',
-    shortcut: '/tree_pro/tree_logo.svg',
-    apple: '/tree_pro/tree_logo.svg',
+    icon: '/mcmillian/mcmill-logo.png',
+    shortcut: '/mcmillian/mcmill-logo.png',
+    apple: '/mcmillian/mcmill-logo.png',
   },
 };
 
@@ -76,31 +76,34 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Jimenez Tree Pro",
-              "image": "https://jimeneztreepro.com/tree_pro/og-tree.jpg",
-              "@id": "https://jimeneztreepro.com",
-              "url": "https://jimeneztreepro.com",
-              "telephone": "+18329667045",
-              "description": "Professional tree removal, trimming, and storm damage cleanup for homeowners in Pasadena and surrounding Houston areas. 24/7 emergency service.",
+              "name": "McMillian Junk Removal",
+              "image": "https://mcmillianjunkremoval.com/mcmillian/mcmill-logo.png",
+              "@id": "https://mcmillianjunkremoval.com",
+              "url": "https://mcmillianjunkremoval.com",
+              "telephone": "+18327216206",
+              "description": "Affordable junk removal, demolition, hoarder house cleanouts, appliance removal, and construction cleanup for residential and commercial clients in Houston and surrounding areas. 24/7 same-day service and free estimates.",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Pasadena",
+                "addressLocality": "Houston",
                 "addressRegion": "TX",
                 "addressCountry": "US"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 29.6911,
-                "longitude": -95.2091
+                "latitude": 29.7604,
+                "longitude": -95.3698
               },
               "areaServed": [
-                { "@type": "City", "name": "Pasadena" },
                 { "@type": "City", "name": "Houston" },
-                { "@type": "City", "name": "Alvin" },
+                { "@type": "City", "name": "Sugar Land" },
+                { "@type": "City", "name": "Cypress" },
+                { "@type": "City", "name": "Katy" },
                 { "@type": "City", "name": "Pearland" },
-                { "@type": "City", "name": "Friendswood" },
-                { "@type": "City", "name": "League City" },
-                { "@type": "City", "name": "Clear Lake" }
+                { "@type": "City", "name": "Pasadena" },
+                { "@type": "City", "name": "Missouri City" },
+                { "@type": "County", "name": "Harris County" },
+                { "@type": "County", "name": "Fort Bend County" },
+                { "@type": "County", "name": "Galveston County" }
               ],
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
@@ -111,12 +114,12 @@ export default function RootLayout({
               "priceRange": "$$",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Tree Services",
+                "name": "Junk Removal & Demolition Services",
                 "itemListElement": [
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency & Large Tree Removal" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Large Tree Trimming & Structural Pruning" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Storm Damage Cleanup & Debris Hauling" } },
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stump Grinding" } }
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Junk Removal" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Demolition Services" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hoarder House Clean-Out" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Appliance Removal" } }
                 ]
               }
             })
@@ -128,9 +131,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Jimenez Tree Pro",
-              "alternateName": ["Jimenez Tree Pro Pasadena", "JimenezTreePro.com"],
-              "url": "https://jimeneztreepro.com"
+              "name": "McMillian Junk Removal",
+              "alternateName": ["McMillian Junk Removal Houston", "McMillianJunkRemoval.com"],
+              "url": "https://mcmillianjunkremoval.com"
             })
           }}
         />

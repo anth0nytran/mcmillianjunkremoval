@@ -27,9 +27,9 @@ export function ProjectCard({
     const [showAfter, setShowAfter] = useState(!!afterImage);
 
     return (
-        <div className="snap-center shrink-0 w-[85vw] md:w-auto flex flex-col group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 bg-white">
+        <div className="snap-center shrink-0 w-[85vw] md:w-auto flex flex-col group relative rounded-sm overflow-hidden shadow-[2px_2px_0_rgba(0,0,0,0.08)] hover:shadow-[4px_4px_0_rgba(0,0,0,0.12)] transition-all hover:-translate-y-2 bg-white">
             {/* Image Container */}
-            <div className="aspect-[4/3] relative bg-slate-100 overflow-hidden">
+            <div className="aspect-[4/3] relative bg-neutral-100 overflow-hidden">
                 {/* Before Image - Always present, essentially the "background" */}
                 <div className="absolute inset-0">
                     {beforeImage ? (
@@ -41,8 +41,8 @@ export function ProjectCard({
                             sizes="(max-width: 768px) 100vw, 33vw"
                         />
                     ) : (
-                        <div className="w-full h-full bg-slate-100 flex items-center justify-center">
-                            <span className="text-slate-300 text-6xl font-black opacity-50 select-none">?</span>
+                        <div className="w-full h-full bg-neutral-100 flex items-center justify-center">
+                            <span className="text-neutral-300 text-6xl font-black opacity-50 select-none">?</span>
                         </div>
                     )}
                 </div>
@@ -64,7 +64,7 @@ export function ProjectCard({
                 )}
 
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent pointer-events-none z-10" />
 
                 {/* Toggle Button */}
                 {afterImage && (
@@ -74,7 +74,7 @@ export function ProjectCard({
                                 e.preventDefault();
                                 setShowAfter(!showAfter);
                             }}
-                            className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg transition-transform hover:scale-105 active:scale-95"
+                            className="flex items-center gap-2 px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider shadow-[2px_2px_0_rgba(0,0,0,0.1)] transition-transform hover:scale-105 active:scale-95"
                             style={{
                                 backgroundColor: showAfter ? 'white' : actionColor,
                                 color: showAfter ? 'black' : 'white',
@@ -90,8 +90,8 @@ export function ProjectCard({
                 {afterImage && (
                     <div className="absolute top-4 left-4 z-20">
                         <span
-                            className="px-2 py-1 rounded text-[10px] font-black uppercase tracking-widest text-white shadow-sm transition-colors duration-300"
-                            style={{ backgroundColor: showAfter ? accentColor : '#64748b' }}
+                            className="px-2 py-1 rounded-sm text-[10px] font-black uppercase tracking-widest text-white shadow-sm transition-colors duration-300"
+                            style={{ backgroundColor: showAfter ? accentColor : '#525252' }}
                         >
                             {showAfter ? 'After Results' : 'Before Work'}
                         </span>
@@ -100,13 +100,13 @@ export function ProjectCard({
             </div>
 
             {/* Content */}
-            <div className="p-5 flex-1 flex flex-col justify-between bg-white border-t border-slate-100">
+            <div className="p-5 flex-1 flex flex-col justify-between bg-white border-t border-neutral-100">
                 <div>
-                    <h3 className="text-lg font-black text-slate-900 mb-1 leading-tight group-hover:text-blue-900 transition-colors">
+                    <h3 className="text-lg font-black text-neutral-900 mb-1 leading-tight group-hover:text-red-800 transition-colors">
                         {title}
                     </h3>
                     <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">
                             {location}
                         </span>
                     </div>

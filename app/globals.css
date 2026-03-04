@@ -16,20 +16,20 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-app-body), "Segoe UI", sans-serif;
+  font-family: var(--font-app-body), "DM Sans", "Segoe UI", sans-serif;
 }
 
-.jimenez-site h1,
-.jimenez-site h2,
-.jimenez-site h3,
-.jimenez-site h4,
-.jimenez-site h5,
-.jimenez-site h6,
-.jimenez-site .font-black,
-.jimenez-site .font-extrabold,
-.jimenez-site .brand-display,
-.jimenez-site .uppercase {
-  font-family: var(--font-app-display), "Arial Narrow", sans-serif;
+.mcmillian-site h1,
+.mcmillian-site h2,
+.mcmillian-site h3,
+.mcmillian-site h4,
+.mcmillian-site h5,
+.mcmillian-site h6,
+.mcmillian-site .font-black,
+.mcmillian-site .font-extrabold,
+.mcmillian-site .brand-display,
+.mcmillian-site .uppercase {
+  font-family: var(--font-app-display), "Montserrat", "Segoe UI", sans-serif;
 }
 
 /* ═══════════════════════════════════════════
@@ -118,7 +118,7 @@ details[open]>*:not(summary) {
    ORGANIC SECTION TRANSITIONS
 ═══════════════════════════════════════════ */
 .section-dark {
-  background-color: #0c1220;
+  background-color: #111111;
 }
 
 .section-warm {

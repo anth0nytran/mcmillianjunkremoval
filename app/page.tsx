@@ -405,7 +405,7 @@ export default function McMillianJunkRemovalPage() {
     {
       name: 'Appliance Removal',
       image: '/mcmillian/done_right.png',
-      desc: 'We remove and haul away old appliances � refrigerators, washers, dryers, ovens, water heaters, and more. Fast, easy, and affordable.',
+      desc: 'We remove and haul away old appliances — refrigerators, washers, dryers, ovens, water heaters, and more. Fast, easy, and affordable.',
       bestFor: 'Old refrigerators, washers, dryers, dishwashers, AC units, and water heaters.',
       bullets: [
         'Safe disconnection and removal',
@@ -418,7 +418,7 @@ export default function McMillianJunkRemovalPage() {
   ];
 
   const steps = [
-    { title: 'Quick Call or Text', body: 'Tell us what you need hauled away. Send photos if you can � we\'ll give you a fast, free estimate.' },
+    { title: 'Quick Call or Text', body: 'Tell us what you need hauled away. Send photos if you can — we\'ll give you a fast, free estimate.' },
     { title: 'On-Site Estimate', body: 'We come to you, assess the job, and give you an honest, upfront price. No hidden fees, no surprises.' },
     { title: 'We Haul It All Away', body: 'Our crew loads everything up, sweeps the area clean, and hauls it all away. You don\'t lift a finger.' },
   ];
@@ -1048,7 +1048,7 @@ export default function McMillianJunkRemovalPage() {
               </h3>
               <div className="text-base mb-10 leading-relaxed max-w-lg text-neutral-300 border-l-4 border-red-500 pl-5 py-3 bg-red-500/10 rounded-sm">
                 <p className="italic font-medium mb-3 text-neutral-200">
-                  "I believe everyone deserves a fair price. I\'ve seen too many companies take advantage of people. That\'s not how I do business. We give you an honest quote and do the job right."
+                  {"\"I believe everyone deserves a fair price. I've seen too many companies take advantage of people. That's not how I do business. We give you an honest quote and do the job right.\""}
                 </p>
                 <div className="font-bold text-white uppercase tracking-widest text-[11px] font-mono">
                   — Andre McMillian, Owner

@@ -246,6 +246,7 @@ export default function McMillianJunkRemovalPage() {
   const [formError, setFormError] = useState('');
   const [formTimestamp] = useState(() => Date.now().toString());
   const [phoneValue, setPhoneValue] = useState('');
+  const galleryRef = useRef<HTMLDivElement>(null);
   const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
   // Format phone as (XXX) XXX-XXXX
   const formatPhone = (value: string) => {
@@ -254,6 +255,16 @@ export default function McMillianJunkRemovalPage() {
     if (digits.length <= 3) return `(${digits}`;
     if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
     return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+  };
+
+  const scrollGallery = (direction: 'left' | 'right') => {
+    if (galleryRef.current) {
+      const scrollAmount = galleryRef.current.clientWidth * 0.8;
+      galleryRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
   };
 
   // Smooth scroll to the quote form in the hero section
@@ -338,30 +349,17 @@ export default function McMillianJunkRemovalPage() {
     'Fully insured & hardworking crews',
   ];
   const recentJobs = [
-    {
-      title: 'Full Garage Cleanout',
-      location: 'Harris County',
-      beforeImage: '/mcmillian/hero_background.jpeg',
-      alt: 'Garage Cleanout'
-    },
-    {
-      title: 'Hoarder House Clean-Out',
-      location: 'Sugar Land',
-      beforeImage: '/mcmillian/why_us.jpeg',
-      alt: 'Hoarder House'
-    },
-    {
-      title: 'Construction Site Debris Removal',
-      location: 'Cypress',
-      beforeImage: '/mcmillian/why_background.jpeg',
-      alt: 'Construction Cleanup'
-    },
-    {
-      title: 'Shed Demolition & Haul Away',
-      location: 'Fort Bend',
-      beforeImage: '/mcmillian/reviews.jpeg',
-      alt: 'Shed Demolition'
-    }
+    { title: 'Garage Cleanout (Before)', location: 'Houston, TX', beforeImage: '/mcmillian/before.jpeg', alt: 'Garage Cleanout Before' },
+    { title: 'Garage Cleanout (After)', location: 'Houston, TX', beforeImage: '/mcmillian/after.jpeg', alt: 'Garage Cleanout After' },
+    { title: 'Storage Unit (Before)', location: 'Sugar Land, TX', beforeImage: '/mcmillian/before_2.jpeg', alt: 'Storage Unit Before' },
+    { title: 'Storage Unit (After)', location: 'Sugar Land, TX', beforeImage: '/mcmillian/after_2.jpeg', alt: 'Storage Unit After' },
+    { title: 'Curbside Removal (Before)', location: 'Cypress, TX', beforeImage: '/mcmillian/why_us.jpeg', alt: 'Curbside Pick up Before' },
+    { title: 'Curbside Removal (After)', location: 'Cypress, TX', beforeImage: '/mcmillian/junkers.jpeg', alt: 'Curbside Pick up After' },
+    { title: 'Complete Transformation', location: 'Harris County, TX', beforeImage: '/mcmillian/hoarder.png', alt: 'Hoarder Cleanout Before and After' },
+    { title: 'Warehouse Cleanup', location: 'Houston, TX', beforeImage: '/mcmillian/gallery beforeafter.png', alt: 'Commercial Cleanout Before and After' },
+    { title: 'Heavy Debris Hauling', location: 'Fort Bend, TX', beforeImage: '/mcmillian/why_us2.jpeg', alt: 'Debris Hauling' },
+    { title: 'Construction Prep', location: 'Galveston County', beforeImage: '/mcmillian/reviews.jpeg', alt: 'Construction Lot Cleanup' },
+    { title: 'Professional Fleet', location: 'Katy, TX', beforeImage: '/mcmillian/why_us1.jpeg', alt: 'Commercial Fleet' }
   ];
 
   const allServices = [
@@ -380,7 +378,7 @@ export default function McMillianJunkRemovalPage() {
     },
     {
       name: 'Demolition',
-      image: '/mcmillian/reviews_background.png',
+      image: '/mcmillian/why_background.jpeg',
       desc: 'Professional demolition services for sheds, decks, fences, interior walls, and more. We tear it down and haul it away — all in one visit.',
       bestFor: 'Sheds, decks, fencing, drywall, flooring removal, and small structure tear-downs.',
       bullets: [
@@ -393,7 +391,7 @@ export default function McMillianJunkRemovalPage() {
     },
     {
       name: 'Hoarder House Clean-Out',
-      image: '/mcmillian/why_us.png',
+      image: '/mcmillian/hoarder.png',
       desc: 'Compassionate and thorough hoarder house cleanout services. We work with you to clear the space safely, efficiently, and discreetly.',
       bestFor: 'Severe clutter, estate cleanouts, abandoned properties, and heavy-duty residential cleanups.',
       bullets: [
@@ -1145,26 +1143,58 @@ export default function McMillianJunkRemovalPage() {
       <section id="work" className="pb-24 pt-16 overflow-hidden relative" style={{ backgroundColor: '#ffffff' }}>
         <div className="absolute inset-0 bg-grid-neutral-900 opacity-[0.02]" />
         <div className={`${shellClass} relative z-10`}>
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-end justify-between mb-10">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] font-mono mb-2" style={{ color: accent }}>Our Portfolio</p>
               <h2 className="text-4xl font-black md:text-5xl uppercase tracking-tight" style={{ color: t.textPrimary }}>Recent Projects</h2>
             </div>
-            <div className="hidden md:flex gap-2">
-              <div className="h-1 w-20 rounded-full opacity-20" style={{ backgroundColor: t.textPrimary }} />
-              <div className="h-1 w-4 rounded-full" style={{ backgroundColor: action }} />
+            {/* Gallery Buttons */}
+            <div className="hidden md:flex gap-3">
+              <button
+                onClick={() => scrollGallery('left')}
+                className="h-10 w-10 flex items-center justify-center rounded-full border border-neutral-200 bg-white shadow-sm hover:bg-neutral-50 transition-colors"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-5 w-5 text-neutral-600" />
+              </button>
+              <button
+                onClick={() => scrollGallery('right')}
+                className="h-10 w-10 flex items-center justify-center rounded-full border border-neutral-200 bg-white shadow-sm hover:bg-neutral-50 transition-colors"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-5 w-5 text-neutral-600" />
+              </button>
             </div>
           </div>
-          <div className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-8 snap-x md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible">
+
+          {/* Gallery Carousel Window */}
+          <div
+            ref={galleryRef}
+            className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-6 snap-x snap-mandatory hide-scrollbar sm:mx-0 sm:px-0"
+            style={{
+              scrollbarWidth: 'none', /* Firefox */
+              msOverflowStyle: 'none'  /* IE and Edge */
+            }}
+          >
             {recentJobs.map((job, i) => (
-              <ProjectCard
+              <div
                 key={`${job.title}-${i}`}
-                {...job}
-                accentColor={accent}
-                actionColor={action}
-              />
+                className="min-w-[85%] sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] snap-start flex-none"
+              >
+                <ProjectCard
+                  {...job}
+                  accentColor={accent}
+                  actionColor={action}
+                />
+              </div>
             ))}
           </div>
+          <style dangerouslySetInnerHTML={{
+            __html: `
+            .hide-scrollbar::-webkit-scrollbar {
+              display: none;
+            }
+          `}} />
         </div>
       </section>
 

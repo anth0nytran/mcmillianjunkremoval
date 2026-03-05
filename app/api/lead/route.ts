@@ -198,6 +198,7 @@ export async function POST(req: Request) {
   const brandAddress = 'Houston, TX';
   const brandPrimary = '#111111';
   const brandAccent = '#dc2626';
+  const brandAction = '#eab308';
   const fromEmail = process.env.LEAD_FROM_EMAIL || 'McMillian Junk Removal <leads@quicklaunchweb.us>';
   const subject = `New Lead: ${safeService} | ${safeName}`;
 
@@ -244,7 +245,7 @@ export async function POST(req: Request) {
             <tr>
               <td style="font-size:18px;font-weight:800;letter-spacing:0.4px;text-transform:uppercase;">${brandName}</td>
               <td align="right">
-                <span style="display:inline-block;background:${brandAccent};color:#ffffff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:999px;letter-spacing:1.2px;">NEW LEAD</span>
+                <span style="display:inline-block;background:${brandAction};color:${brandPrimary};font-weight:800;font-size:11px;padding:7px 10px;border-radius:999px;letter-spacing:1.2px;">NEW LEAD</span>
               </td>
             </tr>
           </table>
@@ -262,7 +263,7 @@ export async function POST(req: Request) {
           <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
             <tr>
               <td style="padding:0 0 10px;">
-                <a href="tel:${escapeHtml(phoneLink || phone)}" style="display:block;background:${brandAccent};color:#ffffff;text-decoration:none;font-weight:800;font-size:14px;text-align:center;padding:14px 18px;border-radius:10px;">
+                <a href="tel:${escapeHtml(phoneLink || phone)}" style="display:block;background:${brandAction};color:${brandPrimary};text-decoration:none;font-weight:800;font-size:14px;text-align:center;padding:14px 18px;border-radius:10px;">
                   Hold to Call Lead
                 </a>
               </td>

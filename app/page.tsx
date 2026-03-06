@@ -349,8 +349,8 @@ export default function McMillianJunkRemovalPage() {
     'Fully insured & hardworking crews',
   ];
   const recentJobs = [
-    { title: 'Garage Cleanout (Before)', location: 'Houston, TX', beforeImage: '/mcmillian/before.jpeg', alt: 'Garage Cleanout Before' },
-    { title: 'Garage Cleanout (After)', location: 'Houston, TX', beforeImage: '/mcmillian/after.jpeg', alt: 'Garage Cleanout After' },
+    { title: 'Garage Cleanout (After)', location: 'Houston, TX', beforeImage: '/mcmillian/before.jpeg', alt: 'Garage Cleanout After' },
+    { title: 'Garage Cleanout (Before)', location: 'Houston, TX', beforeImage: '/mcmillian/after.jpeg', alt: 'Garage Cleanout Before' },
     { title: 'Storage Unit (Before)', location: 'Sugar Land, TX', beforeImage: '/mcmillian/before_2.jpeg', alt: 'Storage Unit Before' },
     { title: 'Storage Unit (After)', location: 'Sugar Land, TX', beforeImage: '/mcmillian/after_2.jpeg', alt: 'Storage Unit After' },
     { title: 'Curbside Removal (Before)', location: 'Cypress, TX', beforeImage: '/mcmillian/why_us.jpeg', alt: 'Curbside Pick up Before' },

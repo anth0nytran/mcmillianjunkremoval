@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/mcmillian/mcmill-logo.png',
-        width: 734,
-        height: 1068,
+        url: '/mcmillian/new_logo_transparent.png',
+        width: 1599,
+        height: 1205,
         alt: 'McMillian Junk Removal — Affordable Junk Hauling in Houston TX',
       },
     ],
@@ -50,12 +50,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Houston Junk Removal & Demolition | McMillian Junk Removal",
     description: "24/7 junk removal, demolition, and cleanout services for Houston and surrounding areas. Fair pricing, same-day service, free estimates.",
-    images: ['/mcmillian/mcmill-logo.png'],
+    images: ['/mcmillian/new_logo_transparent.png'],
   },
   icons: {
-    icon: '/mcmillian/mcmill-logo.png',
-    shortcut: '/mcmillian/mcmill-logo.png',
-    apple: '/mcmillian/mcmill-logo.png',
+    icon: [
+      { url: '/mcmillian/new_logo.svg', type: 'image/svg+xml' },
+      { url: '/mcmillian/new_logo_transparent.png', type: 'image/png' },
+    ],
+    shortcut: '/mcmillian/new_logo_transparent.png',
+    apple: '/mcmillian/new_logo_transparent.png',
   },
 };
 
@@ -77,7 +80,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "McMillian Junk Removal",
-              "image": "https://mcmillianjunkremoval.com/mcmillian/mcmill-logo.png",
+              "image": "https://mcmillianjunkremoval.com/mcmillian/new_logo_transparent.png",
               "@id": "https://mcmillianjunkremoval.com",
               "url": "https://mcmillianjunkremoval.com",
               "telephone": "+18327216206",

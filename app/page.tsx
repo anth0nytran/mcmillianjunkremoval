@@ -542,10 +542,10 @@ export default function McMillianJunkRemovalPage() {
           <div className={`${shellClass} flex items-center justify-between py-2`}>
             <a href="#top" className="flex items-center gap-2 md:gap-3">
               <NextImage
-                src="/mcmillian/mcmill-logo.png"
+                src="/mcmillian/new_logo.svg"
                 alt="McMillian Junk Removal Logo"
-                width={734}
-                height={1068}
+                width={1599}
+                height={1205}
                 priority
                 unoptimized
                 className="h-16 w-auto object-contain"
@@ -1378,10 +1378,10 @@ export default function McMillianJunkRemovalPage() {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <NextImage
-                  src="/mcmillian/mcmill-logo.png"
+                  src="/mcmillian/new_logo.svg"
                   alt="McMillian Junk Removal Logo"
-                  width={734}
-                  height={1068}
+                  width={1599}
+                  height={1205}
                   unoptimized
                   className="h-14 w-auto object-contain"
                 />

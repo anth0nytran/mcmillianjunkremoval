@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useMemo, useState, useEffect, useRef, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,7 +16,7 @@ const config = {
   phone: '(832) 721-6206',
   email: 'mcmillianjunkremoval@yahoo.com',
   primaryService: 'Junk Removal & Demolition',
-  services: ['Demolition', 'Hoarder House Clean-Out', 'Storage Clean Out', 'Appliance Removal', 'Construction Site Clean Up'],
+  services: ['Demolition', 'Hoarder House Clean-Out', 'Storage Clean Out', 'Appliance Removal', 'Construction Site Clean Up', 'Illegal Dumpsites'],
   rating: 5.0,
   reviewCount: 30,
   yearsInBusiness: 10,

@@ -359,8 +359,17 @@ export default function McMillianJunkRemovalPage() {
     { title: 'Warehouse Cleanup', location: 'Houston, TX', beforeImage: '/mcmillian/gallery beforeafter.png', alt: 'Commercial Cleanout Before and After' },
     { title: 'Heavy Debris Hauling', location: 'Fort Bend, TX', beforeImage: '/mcmillian/why_us2.jpeg', alt: 'Debris Hauling' },
     { title: 'Construction Prep', location: 'Galveston County', beforeImage: '/mcmillian/reviews.jpeg', alt: 'Construction Lot Cleanup' },
-    { title: 'Professional Fleet', location: 'Katy, TX', beforeImage: '/mcmillian/why_us1.jpeg', alt: 'Commercial Fleet' }
+    { title: 'Professional Fleet', location: 'Katy, TX', beforeImage: '/mcmillian/why_us1.jpeg', alt: 'Commercial Fleet' },
+    // New added vertical/square photos and videos
+    { title: 'On the Job', location: 'Greater Houston', beforeImage: '/mcmillian/new_photos/image000000 (1).JPG', alt: 'Driveway Junk Hauling — Crew Loading Trailer' },
+    { title: 'Curbside Removal', location: 'Houston, TX', beforeImage: '/mcmillian/new_photos/image000001.JPG', alt: 'Curbside Furniture & Debris Removal' },
+    { title: 'Waste Facility', location: 'Houston, TX', beforeImage: '/mcmillian/new_photos/image000000.JPG', alt: 'Waste Facility Drop-Off', isSquare: true },
+    { title: 'In Action', location: 'Houston, TX', videoSrc: '/mcmillian/new_photos/video000001.MP4', alt: 'McMillian Junk Removal In Action', isVideo: true, isSquare: true },
+    { title: 'Lumber Demolition', location: 'Houston, TX', beforeImage: '/mcmillian/new_photos/image000002.JPG', alt: 'Crew Member Cutting Lumber on Site', isSquare: true },
+    { title: 'Clean Yard', location: 'Greater Houston', beforeImage: '/mcmillian/new_photos/image000002 (1).JPG', alt: 'Clean Yard After Complete Removal' },
+    { title: 'Commercial Debris', location: 'Houston, TX', beforeImage: '/mcmillian/new_photos/image000003.JPG', alt: 'Commercial Property Debris Cleanup', isSquare: true }
   ];
+
 
   const allServices = [
     {
